@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://xfex38ipui4a"]
+
+[ext_resource type="Script" uid="uid://b0304gbm116na" path="res://Scripts/jugador.gd" id="1_8dhxo"]
+[ext_resource type="Texture2D" uid="uid://chbd4r8lsbf14" path="res://sprites/gato alien spritesheet.png" id="2_p2l3q"]
+[ext_resource type="Texture2D" uid="uid://porufd4yuw0r" path="res://sprites/botas.png" id="3_bbvk0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbvk0"]
+size = Vector2(20, 2)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p2l3q"]
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_p2l3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("botas:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2masy"]
+resource_name = "caida"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_0rcru"]
+resource_name = "caminar"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -1), Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("botas:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_4iox0"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("botas:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bbvk0"]
+resource_name = "nadar"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_2qsgh"]
+resource_name = "salto"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-1.4901161e-08, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [17, 18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2masy"]
+_data = {
+&"RESET": SubResource("Animation_p2l3q"),
+&"caida": SubResource("Animation_2masy"),
+&"caminar": SubResource("Animation_0rcru"),
+&"idle": SubResource("Animation_4iox0"),
+&"nadar": SubResource("Animation_bbvk0"),
+&"salto": SubResource("Animation_2qsgh")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1635506517 groups=["jugador"]]
+script = ExtResource("1_8dhxo")
+vel_recogida_cuerda = 75.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=960752047]
+texture_filter = 1
+scale = Vector2(0.5208333, 0.5208333)
+texture = ExtResource("2_p2l3q")
+hframes = 5
+vframes = 5
+frame = 16
+
+[node name="botas" type="Sprite2D" parent="." unique_id=1206381214]
+visible = false
+texture_filter = 1
+scale = Vector2(0.5208333, 0.5208333)
+texture = ExtResource("3_bbvk0")
+hframes = 5
+
+[node name="colision_agua" type="Area2D" parent="." unique_id=497133385 groups=["jugador_agua"]]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colision_agua" unique_id=136817059]
+shape = SubResource("RectangleShape2D_bbvk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483107889]
+shape = SubResource("CapsuleShape2D_p2l3q")
+debug_color = Color(0.9184838, 0.28502384, 0, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1907016035]
+target_position = Vector2(14, 0)
+
+[node name="Label" type="Label" parent="." unique_id=42652737]
+offset_left = -18.0
+offset_top = -45.0
+offset_right = 22.0
+offset_bottom = -22.0
+
+[node name="pivote" type="Node2D" parent="." unique_id=1447893219]
+
+[node name="gancho_pos" type="Marker2D" parent="pivote" unique_id=1252876147]
+position = Vector2(12, 0)
+
+[node name="ColorRect" type="ColorRect" parent="pivote/gancho_pos" unique_id=1559407099]
+offset_right = 1.0
+offset_bottom = 1.0
+color = Color(1, 0, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=692376703]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=529898952]
+libraries/ = SubResource("AnimationLibrary_2masy")

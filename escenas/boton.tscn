@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cay0y53r0gkvk"]
+
+[ext_resource type="Script" uid="uid://bynv2p1133gjo" path="res://Scripts/boton.gd" id="1_rwjfm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06j8q"]
+size = Vector2(20, 4)
+
+[node name="boton" type="Area2D" unique_id=781967237]
+script = ExtResource("1_rwjfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284749817]
+shape = SubResource("RectangleShape2D_06j8q")
+debug_color = Color(0.6959489, 0.30769458, 0.96134466, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1125620505]
+offset_left = -32.0
+offset_top = -78.0
+offset_right = 34.0
+offset_bottom = -55.0
+text = "activado"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1486325893]
+offset_left = -10.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 2.0
+color = Color(1, 0, 0, 1)

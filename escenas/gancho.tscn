@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bu1vtt3x73nev"]
+
+[ext_resource type="Script" uid="uid://cklu6oof45qu0" path="res://Scripts/gancho.gd" id="1_5wn4d"]
+[ext_resource type="Script" uid="uid://ceck4jbjjdg51" path="res://Scripts/cuerda.gd" id="2_al8q1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hq3sa"]
+radius = 3.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=51728589]
+collision_layer = 8
+collision_mask = 8
+mass = 0.1
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_5wn4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1101263312]
+shape = SubResource("CircleShape2D_hq3sa")
+debug_color = Color(1.540184e-06, 0.63514835, 0.42441878, 0.41960785)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=759770607]
+top_level = true
+z_index = -1
+width = 3.0
+default_color = Color(0.56062925, 0.2722945, 1.92523e-07, 1)
+script = ExtResource("2_al8q1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

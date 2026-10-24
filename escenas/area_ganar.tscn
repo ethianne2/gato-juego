@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://crs1red68kbob"]
+
+[ext_resource type="Script" uid="uid://bouoqrmdk6s0t" path="res://Scripts/area_ganar.gd" id="1_jwj11"]
+[ext_resource type="PackedScene" uid="uid://ce57btem16287" path="res://escenas/ganar.tscn" id="2_vjn44"]
+[ext_resource type="Texture2D" uid="uid://t74cy0wjxax2" path="res://sprites/bandera.png" id="3_shjj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6vle"]
+
+[node name="Area2D" type="Area2D" unique_id=1916433095]
+script = ExtResource("1_jwj11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1170970454]
+shape = SubResource("RectangleShape2D_r6vle")
+debug_color = Color(0.9496408, 3.465414e-06, 0.57488537, 0.41960785)
+
+[node name="ganar" parent="." unique_id=990854631 instance=ExtResource("2_vjn44")]
+visible = false
+
+[node name="Bandera" type="Sprite2D" parent="." unique_id=476162576]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("3_shjj6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

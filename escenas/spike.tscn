@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b3hf6tonv35x5"]
+
+[ext_resource type="Texture2D" uid="uid://dhpy145aedkkc" path="res://sprites/Multi_Platformer_Tileset/Cave/Props/Cave_Stalactite_Left.png" id="2_d5iew"]
+[ext_resource type="Script" uid="uid://bqh7qmv0h72iw" path="res://Scripts/pincho.gd" id="2_mqhb8"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mqhb8"]
+points = PackedVector2Array(3, 0, 3, 4, 1, 8, -1, 8, -3, 4, -3, 0)
+
+[node name="pincho" type="Area2D" unique_id=849425179]
+texture_filter = 1
+position = Vector2(-1.2705494e-21, -1.4210855e-14)
+rotation = -3.1415927
+scale = Vector2(-1.4329219, 2.5516355)
+script = ExtResource("2_mqhb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1026367910]
+position = Vector2(-0.37449515, -2.986174)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("ConvexPolygonShape2D_mqhb8")
+
+[node name="StaticBody2D" type="Sprite2D" parent="." unique_id=1175352486]
+position = Vector2(3.114879, 4.932881)
+texture = ExtResource("2_d5iew")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dei0o52sgbpj"]
+
+[ext_resource type="Script" uid="uid://bcqmh8tu2spyy" path="res://Scripts/puerta.gd" id="1_bek8y"]
+[ext_resource type="Texture2D" uid="uid://d3dpn6ejfqrn0" path="res://sprites/Multi_Platformer_Tileset/Desert/Terrain/Desert_Terrain_Tileset.png" id="2_8gvf5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h0p7"]
+atlas = ExtResource("2_8gvf5")
+region = Rect2(0, 128, 16, 32)
+
+[node name="puerta" type="StaticBody2D" unique_id=1884721280]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_bek8y")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=832323276]
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_1h0p7")
+stretch_mode = 1

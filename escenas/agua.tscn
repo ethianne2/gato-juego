@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://gqlvtu45fw1j"]
+
+[ext_resource type="Script" uid="uid://47ueiiyo5aee" path="res://Scripts/agua.gd" id="1_ldk1s"]
+[ext_resource type="Shader" uid="uid://c6e2u3id4v5rs" path="res://Scripts/agua.gdshader" id="2_vijyx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5b4t"]
+shader = ExtResource("2_vijyx")
+shader_parameter/color_agua = Color(0.14901961, 0.7058824, 0.70980394, 1)
+shader_parameter/color_ola = Color(0.17161533, 0.78423005, 0.788539, 1)
+shader_parameter/velocidad = 0.42
+shader_parameter/frecuencia_olas = 8.585
+shader_parameter/amplitud = -0.3
+shader_parameter/transparencia = 0.5150000244625
+shader_parameter/fuerza_refraccion = 0.07
+shader_parameter/amplitud_borde = 0.02
+shader_parameter/frecuencia_borde = 8.44
+shader_parameter/velocidad_borde = 1.72
+
+[node name="agua" type="Area2D" unique_id=1596607693]
+script = ExtResource("1_ldk1s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1692967129]
+material = SubResource("ShaderMaterial_r5b4t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

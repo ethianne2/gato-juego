@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://882jb3x48b0y"]
+
+[ext_resource type="Script" uid="uid://dp2sc5chaqge5" path="res://Scripts/menu_inicio.gd" id="1_leqng"]
+
+[sub_resource type="Animation" id="Animation_6i6mq"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_leqng"]
+resource_name = "a"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lkhye"]
+_data = {
+&"RESET": SubResource("Animation_6i6mq"),
+&"a": SubResource("Animation_leqng")
+}
+
+[node name="menu inicio" type="Control" unique_id=1835885963]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_leqng")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2133402642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23675987, 0.7632401, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=204260766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -53.0
+offset_right = 28.5
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+text = "PlaceHolder"
+horizontal_alignment = 1
+
+[node name="cerrar" type="Button" parent="." unique_id=119079474]
+layout_mode = 1
+offset_right = 67.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "cerrar juego"
+
+[node name="opciones" type="Button" parent="." unique_id=611388174]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 18.0
+offset_right = 68.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "opciones w"
+
+[node name="jugar" type="Button" parent="." unique_id=999988979]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -15.5
+offset_right = 68.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "jugar"
+
+[node name="skins" type="Button" parent="." unique_id=261357408]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 51.0
+offset_right = 68.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "aspectos"
+
+[node name="creditos" type="Button" parent="." unique_id=500891006]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_bottom = 22.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 10
+disabled = true
+text = "creditos"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=74422364]
+libraries/ = SubResource("AnimationLibrary_lkhye")
+
+[connection signal="pressed" from="cerrar" to="." method="_on_cerrar_pressed"]
+[connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]
